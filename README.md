@@ -1,10 +1,13 @@
-Connect through bastion to internalhost
+### Connect through bastion to internalhost
 
-ssh -i <ssh private key> -t -A <username>@<external bastion IP> ssh <username>@<internalhost IP>
+```
+ssh -i <ssh private key> -t -A <username>@<external bastion IP> \
+ssh <username>@<internalhost IP>
+```
 
+### Connect using `ssh internalhost`
 
-Connect using "ssh internalhost"
-
+```
 cat >> ~/.ssh/config << EOF
 Host bastion
 Hostname <external bastion IP>
@@ -16,11 +19,11 @@ Host internalhost
 Hostname <internal internalhost IP>
 Port 22
 User appuser
-ProxyCommand ssh -W %h:%p bastion
+ProxyJump bastion
 EOF
+```
 
-
-Hosts information
+### Hosts information
 
 bastion
 exteranl IP: 35.195.215.246
