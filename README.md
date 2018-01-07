@@ -26,7 +26,7 @@ EOF
 ### Hosts information
 
 bastion
-exteranl IP: 35.195.215.246
+exteranl IP: 35.195.3.199
 internal IP: 10.132.0.2
 
 someinternalhost
