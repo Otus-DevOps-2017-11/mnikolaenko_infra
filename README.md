@@ -31,3 +31,31 @@ internal IP: 10.132.0.2
 
 someinternalhost
 internal IP: 10.132.0.3
+
+## Deploy using gcloud
+
+### Deploy using startup sript
+
+```
+gcloud compute instances create reddit-test\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server \
+  --restart-on-failure \
+  --metadata-from-file startup-script=startup-script.sh
+  ```
+
+### Firewall rule creation
+
+```
+gcloud compute instances create reddit-test\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server \
+  --restart-on-failure \
+  --metadata-from-file startup-script=startup-script.sh
+```
