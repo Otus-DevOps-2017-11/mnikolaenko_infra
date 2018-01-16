@@ -45,17 +45,16 @@ gcloud compute instances create reddit-test\
   --tags puma-server \
   --restart-on-failure \
   --metadata-from-file startup-script=startup-script.sh
-  ```
+```
 
 ### Firewall rule creation
 
 ```
-gcloud compute instances create reddit-test\
-  --boot-disk-size=10GB \
-  --image-family ubuntu-1604-lts \
-  --image-project=ubuntu-os-cloud \
-  --machine-type=g1-small \
-  --tags puma-server \
-  --restart-on-failure \
-  --metadata-from-file startup-script=startup-script.sh
+gcloud compute firewall-rules create default-puma-server \
+    --direction=INGRESS
+    --priority=1000
+    --network=default
+    --action=ALLOW
+    --rules=tcp:9292
+    --target-tags=puma-server
 ```
