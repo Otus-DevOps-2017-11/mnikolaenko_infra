@@ -37,7 +37,7 @@ internal IP: 10.132.0.3
 ### Deploy using startup sript
 
 ```
-gcloud compute instances create reddit-test\
+gcloud compute instances create reddit-app\
   --boot-disk-size=10GB \
   --image-family ubuntu-1604-lts \
   --image-project=ubuntu-os-cloud \
