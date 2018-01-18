@@ -1,4 +1,14 @@
 {
+  "variables": {
+      "project_id": "infra-189816",
+      "source_image_family": "ubuntu-1604-lts",
+      "machine_type": "f1-micro",
+      "image_description": "Image with pre-installed services for reddit app",
+      "disk_type": "pd-standard",
+      "disk_size": "10",
+      "network": "default",
+      "tags": ""
+  },
   "builders": [
     {
       "type": "googlecompute",

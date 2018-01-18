@@ -1,4 +1,12 @@
 {
+  "variables" : {
+      "project_id": "infra-189816",
+      "machine_type": "f1-micro",
+      "disk_type": "pd-standard",
+      "disk_size": "10",
+      "network": "default",
+      "tags": ""
+  },
   "builders": [
     {
       "type": "googlecompute",
@@ -9,7 +17,6 @@
       "zone": "europe-west1-b",
       "ssh_username": "appuser",
       "machine_type": "{{user `machine_type`}}",
-      "image_description": "{{user `image_description`}}",
       "disk_type": "{{user `disk_type`}}",
       "disk_size": "{{user `disk_size`}}",
       "network": "{{user `network`}}",
