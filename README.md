@@ -61,16 +61,16 @@ gcloud compute firewall-rules create default-puma-server \
 
 ## Create images with packer
 
-Commands below should be executed from repo root
+Commands below should be executed from the packer directory
 
 Create reddit-base image with configured services:
 ```
-PWD=packer packer build ubuntu16.json
+packer build ubuntu16.json
 ```
 
 Create reddit-full image with configured application:
 ```
-PWD=packer packer build immutable.json
+packer build immutable.json
 ```
 
 You can specify file with variables using ```-var-file=file.json``` flag
