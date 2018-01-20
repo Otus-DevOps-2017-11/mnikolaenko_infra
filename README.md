@@ -37,7 +37,7 @@ internal IP: 10.132.0.3
 ### Deploy using startup sript
 
 ```
-gcloud compute instances create reddit-test\
+gcloud compute instances create reddit-app\
   --boot-disk-size=10GB \
   --image-family ubuntu-1604-lts \
   --image-project=ubuntu-os-cloud \
@@ -58,3 +58,19 @@ gcloud compute firewall-rules create default-puma-server \
     --rules=tcp:9292
     --target-tags=puma-server
 ```
+
+## Create images with packer
+
+Commands below should be executed from repo root
+
+Create reddit-base image with configured services:
+```
+PWD=packer packer build ubuntu16.json
+```
+
+Create reddit-full image with configured application:
+```
+PWD=packer packer build immutable.json
+```
+
+You can specify file with variables using ```-var-file=file.json``` flag

@@ -1,0 +1,13 @@
+[Unit]
+Description=puma-server
+
+[Service]
+Type=simple
+User=appuser
+WorkingDirectory=/home/appuser/reddit/
+ExecStart=/usr/local/bin/puma
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
