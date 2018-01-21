@@ -53,6 +53,6 @@ resource "google_compute_firewall" "firewall_puma" {
 }
 
 resource "google_compute_project_metadata_item" "ssh-keys" {
-  key = "ssh-keys"
+  key   = "ssh-keys"
   value = "${file(var.public_key_path)}"
 }
