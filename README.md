@@ -90,3 +90,14 @@ should contain path to the file with ssh keys. Keys must be in format:
 
 All keys that will be added without describing them in the terraform file will
 be deleted with next ```terraform apply```
+
+### Terraform modules. Stage and prod infrastructure
+
+There are ```app```, ```db``` and ```vpc``` modules in terraform/modules folder.
+```app``` and ```db``` modules defines configuration of instances with db and
+app. ```vpc``` module creates firewall rule with ssh access. These modules used
+by prod and stage environments. Use ```terraform apply``` in ```stage/``` or
+```prod/``` to deploy appropriate environment.
+
+Terraform's state file stored in google cloud. Backend section described in
+```prod/main.tf``` and ```stage/main.tf```
