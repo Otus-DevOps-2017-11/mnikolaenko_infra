@@ -74,3 +74,19 @@ packer build immutable.json
 ```
 
 You can specify file with variables using ```-var-file=file.json``` flag
+
+### Description of infrastructure using terraform
+
+Infrastructure described in ```main.tf``` file in terraform/ directory.
+
+It's necessary to add ```.tfvars``` file with defined variables.
+
+To add ssh keys to the metadata describe ```public_key_path``` variable that
+should contain path to the file with ssh keys. Keys must be in format:
+```
+[USERNAME_1]:ssh-rsa [KEY_VALUE_1] [USERNAME_1]
+[USERNAME_2]:ssh-rsa [KEY_VALUE_2] [USERNAME_2]
+```
+
+All keys that will be added without describing them in the terraform file will
+be deleted with next ```terraform apply```
