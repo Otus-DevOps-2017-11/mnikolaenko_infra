@@ -101,3 +101,8 @@ by prod and stage environments. Use ```terraform apply``` in ```stage/``` or
 
 Terraform's state file stored in google cloud. Backend section described in
 ```prod/main.tf``` and ```stage/main.tf```
+
+## Ansible
+
+Inventory files in ```ansible/``` contains information about app and db
+hosts. These files are presented in ```ini``` and ```yaml``` formats.
