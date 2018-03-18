@@ -106,3 +106,15 @@ Terraform's state file stored in google cloud. Backend section described in
 
 Inventory files in ```ansible/``` contains information about app and db
 hosts. These files are presented in ```ini``` and ```yaml``` formats.
+
+There are db, app and deploy playbooks in ```ansible/```. You can use them with
+```ansible-playbook``` to configure and deploy app on app server and configure
+mongodb on db server. You shoud use ```site.yml``` if you want to configure
+everything.
+
+```
+ansible-playbook db.yml
+ansible-playbook app.yml
+ansible-playbook deploy.yml
+ansible-playbook site.yml
+```

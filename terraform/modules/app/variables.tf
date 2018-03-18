@@ -11,3 +11,8 @@ variable zone {
 variable public_key_path {
   description = "Path to the file with the list of public keys used for ssh access"
 }
+
+variable "source_ranges" {
+  description = "Allowed IP addresses"
+  default     = ["0.0.0.0/0"]
+}
