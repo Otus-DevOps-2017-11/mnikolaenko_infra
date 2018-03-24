@@ -118,3 +118,15 @@ ansible-playbook app.yml
 ansible-playbook deploy.yml
 ansible-playbook site.yml
 ```
+
+### Roles
+
+App and db roles in ```ansible/roles``` used by app and db playbooks to
+configure instances. ```jdauphant.nginx``` role also used by app playbook to
+configure nginx proxy in the app instance.
+
+### Environments
+
+Environment specific data (inventory, requirements, variables) dividen into
+```environments/stage``` and ```environments/prod``` directories. Stage
+environment is used by default.
