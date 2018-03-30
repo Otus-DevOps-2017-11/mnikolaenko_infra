@@ -130,3 +130,17 @@ configure nginx proxy in the app instance.
 Environment specific data (inventory, requirements, variables) dividen into
 ```environments/stage``` and ```environments/prod``` directories. Stage
 environment is used by default.
+
+### Vagrant local environment
+
+You can run local virtualbox VMs with app and db using vagrant. Run
+```vagrant up``` to start two ubuntu VMs that will be provisioned by app and db
+playbooks. Configuration is descibed in ```Vagrantfile```.
+
+### Testing db role with molecule
+
+There is some tests of the db role in
+```roles/db/molecule/default/tests/test_default.py```. You can run instance
+by executing ```molecule create``` from ```ansible/roles/db```. After that
+you can apply playbook ```db/molecule/default/playbook.yml``` by
+```molecule converge``` and then run tests ```molecule verify```.

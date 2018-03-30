@@ -3,6 +3,7 @@
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
 [._]sw[a-p]
+.vscode/
 variables*.json
 *.tfstate
 *.tfstate.*.backup
@@ -18,4 +19,5 @@ jdauphant.nginx
 *.pyc
 .molecule
 .cache
+
 .virtualenv/
