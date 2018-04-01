@@ -3,6 +3,7 @@
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
 [._]sw[a-p]
+.vscode/
 variables*.json
 *.tfstate
 *.tfstate.*.backup
@@ -11,3 +12,12 @@ variables*.json
 .terraform/
 *.retry
 jdauphant.nginx
+
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+
+.virtualenv/
